@@ -1,8 +1,12 @@
+import 'dart:io';
 import 'package:force/force_serverside.dart';
 
 void main() {
-  ForceServer fs = new ForceServer(clientFiles: "../client/web/",
-      startPage: "index.html");
+  var portEnv = Platform.environment['PORT'];
+  var port = portEnv == null ? 9090 : int.parse(portEnv);
+
+  ForceServer fs = new ForceServer(clientFiles: "../client/build/web/",
+      startPage: "index.html", port: port);
 
   fs.setupConsoleLog();
 
