@@ -2,7 +2,7 @@ name: Force-Hello
 
 server:
 # Hello backend
-- url: /hello
+- url: /ws
   match: regex
 
 client:
