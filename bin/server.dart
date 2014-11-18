@@ -5,7 +5,7 @@ void main() {
   var portEnv = Platform.environment['PORT'];
   var port = portEnv == null ? 9090 : int.parse(portEnv);
 
-  ForceServer fs = new ForceServer(clientFiles: "../client/build/web/",
+  ForceServer fs = new ForceServer(clientFiles: "../web/",
       startPage: "index.html", port: port);
 
   fs.setupConsoleLog();

@@ -8,7 +8,10 @@ void main() {
   DivElement respWrap       = querySelector("#response-wrapper");
   DivElement formResp       = querySelector("#response");
 
-  ForceClient fc = new ForceClient();
+  Uri uri = Uri.parse(window.location.href);
+  var port = uri.port != 8080 ? 80 : 9090;
+
+  ForceClient fc = new ForceClient(port: '$port');
   fc.connect();
 
   fc.on("update", (receiver, sender) {
