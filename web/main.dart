@@ -9,7 +9,7 @@ void main() {
   DivElement formResp       = querySelector("#response");
 
   Uri uri = Uri.parse(window.location.href);
-  var port = uri.port != 8080 ? 80 : 9090;
+  var port = uri.port == 80 ? 80 : 9090;
 
   ForceClient fc = new ForceClient(port: '$port');
   fc.connect();
