@@ -1,0 +1,5 @@
+name: force_hello
+dependencies:
+  browser: any
+  force: any
+
